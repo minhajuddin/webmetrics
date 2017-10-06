@@ -41,8 +41,21 @@ defmodule ResponseMetrics do
     conn
   end
 
+  def all_paths do
+    metrics
+    |> hd
+    |> :ets.tab2list
+    |> Enum.map(fn {{path, _}, _} -> path end)
+    |> Enum.uniq
+    |> Enum.sort
+  end
+
   def metrics_for_current_path(conn) do
-    path = path_for(conn)
+    path_for(conn)
+    |> metrics_for_path
+  end
+
+  def metrics_for_path(path) do
     metrics
     |> Enum.map(fn metric ->
       total_amount = :ets.lookup(metric, {path, :total_amount}) |> parse_metric
