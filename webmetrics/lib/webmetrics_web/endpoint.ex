@@ -36,9 +36,8 @@ defmodule WebmetricsWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_webmetrics_key",
-    signing_salt: "6zLkD5Ye"
+    signing_salt: "J2etACpC"
 
-  plug ResponseMetrics
   plug WebmetricsWeb.Router
 
   @doc """

@@ -29,8 +29,6 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-      <%= inspect ResponseMetrics.metrics_for_current_path(@conn) %>
-
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

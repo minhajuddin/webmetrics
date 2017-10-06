@@ -10,7 +10,6 @@ defmodule Webmetrics.Application do
     children = [
       # Start the endpoint when the application starts
       supervisor(WebmetricsWeb.Endpoint, []),
-      ResponseMetrics.ETSOwner,
       # Start your own worker by calling: Webmetrics.Worker.start_link(arg1, arg2, arg3)
       # worker(Webmetrics.Worker, [arg1, arg2, arg3]),
     ]
