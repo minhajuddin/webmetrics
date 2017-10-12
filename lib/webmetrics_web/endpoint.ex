@@ -38,7 +38,6 @@ defmodule WebmetricsWeb.Endpoint do
     key: "_webmetrics_key",
     signing_salt: "6zLkD5Ye"
 
-  plug ResponseMetrics
   plug WebmetricsWeb.Router
 
   @doc """

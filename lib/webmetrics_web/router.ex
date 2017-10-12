@@ -1,5 +1,6 @@
 defmodule WebmetricsWeb.Router do
   use WebmetricsWeb, :router
+  plug ResponseMetrics
 
   pipeline :browser do
     plug :accepts, ["html"]
